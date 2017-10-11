@@ -7,11 +7,28 @@
 
 /*
 	if (typeof(Storage) !== "undefined") {
-		var object = {
-			p:'hola',
-			l:'mundo'
+		
+		function car(temp){
+     		this.brand=temp[0];
+     		this.color=temp[1];
+     		this.year=temp[2];
+ 		}
+
+ var temp = ['Skoda', 'Red', '2012'];
+ car = {brand:'paco',color:'red'};
+
+ localStorage.setItem('car',JSON.stringify(car)); 
+ car = localStorage.getItem('car');
+ car = JSON.parse(car);
+ alert("aa");
+ */
+
+ /*
+ var object = {
+			'p':'hola',
+			'l':'mundo'
 		};
-		localStorage.setItem("object", object);
+		localStorage.setItem("object", JSON.stringify(object));
 		verLocalStorage("object");
     	// Code for localStorage/sessionStorage.
 	} else {
@@ -20,8 +37,9 @@
 
 	function verLocalStorage(name) {
 		var obj = localStorage.getItem(name);
+		obj = JSON.parse(obj);
 
-		  alert(obj.p);
+		  alert(obj);
 
 		}
 */
@@ -36,19 +54,39 @@
 
 
 	
-		var lista = new Array(1, 2, 3, 4, 5, 6, 7, 987, 1213, 0.5214, 152165, 1215, 1051, 6145, 454, 150, 150, 268);
-		//var lista = new Array(Obj1,Obj2);
-		document.cookie = "listaObj="+Obj1;
+		//var lista = new Array(1, 2, 3, 4, 5, 6, 7, 987, 1213, 0.5214, 152165, 1215, 1051, 6145, 454, 150, 150, 268);
+		var lista = new Array(codificarObjecto(Obj1),codificarObjecto(Obj2));
+		document.cookie = "listaObj="+JSON.stringify(lista);
 		//cookies = document.cookie.split(';');
-		var obja = readCookie("listaObj");
+		var obja =  JSON.parse(readCookie("listaObj"));
+
+		/*
+		for(var i = 0; i < obja.length; i++){
+			var obj = descodificarObjecto(obja[i]);
+		}*/
 
 
 
 
+		function codificarObjecto(obj){
+           var objetoCodificado = obj;
+           return JSON.stringify(objetoCodificado);
+		} 
 
+
+
+		function descodificarObjecto(obj){
+           var objetoDecodificado = obj;
+           return JSON.parse(objetoDecodificado);
+		} 
+
+
+
+
+		//alert("hey");
 		//alert(lista[0].id);
 		//alert(obja);
-		alert(obja.id);
+		alert(descodificarObjecto(obja[0]).id);
 
 
 		//alert(readCookie("listaObj")[7]);
