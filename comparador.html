@@ -53,9 +53,11 @@
 
 
 
-	
+		var lista = new Array();
 		//var lista = new Array(1, 2, 3, 4, 5, 6, 7, 987, 1213, 0.5214, 152165, 1215, 1051, 6145, 454, 150, 150, 268);
-		var lista = new Array(codificarObjecto(Obj1),codificarObjecto(Obj2));
+		//var lista = new Array(codificarObjecto(Obj1),codificarObjecto(Obj2));
+		//var lista = new Array(Obj1, Obj2);
+
 		document.cookie = "listaObj="+JSON.stringify(lista);
 		//cookies = document.cookie.split(';');
 		var obja =  JSON.parse(leerCookie("listaObj"));
@@ -64,7 +66,21 @@
 		for(var i = 0; i < obja.length; i++){
 			var obj = descodificarObjecto(obja[i]);
 		}*/
+/*
+		for(var i = 0; i < obja.length; i++){
+			alert(obja[i].id);
+		}
+*/
 
+		alert(lista.length);
+
+
+		/*
+
+		for each (ob in obja){
+			alert(ob.id);
+		}
+		*/
 
 
 
@@ -86,7 +102,8 @@
 		//alert("hey");
 		//alert(lista[0].id);
 		//alert(obja);
-		alert(descodificarObjecto(obja[1]).id);
+		//alert(descodificarObjecto(obja[1]).id);
+		//alert(obja[1].id);
 
 
 		//alert(readCookie("listaObj")[7]);
