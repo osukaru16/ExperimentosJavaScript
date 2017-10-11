@@ -58,7 +58,7 @@
 		var lista = new Array(codificarObjecto(Obj1),codificarObjecto(Obj2));
 		document.cookie = "listaObj="+JSON.stringify(lista);
 		//cookies = document.cookie.split(';');
-		var obja =  JSON.parse(readCookie("listaObj"));
+		var obja =  JSON.parse(leerCookie("listaObj"));
 
 		/*
 		for(var i = 0; i < obja.length; i++){
@@ -86,7 +86,7 @@
 		//alert("hey");
 		//alert(lista[0].id);
 		//alert(obja);
-		alert(descodificarObjecto(obja[0]).id);
+		alert(descodificarObjecto(obja[1]).id);
 
 
 		//alert(readCookie("listaObj")[7]);
@@ -101,7 +101,7 @@
 		alert("Hecho");
 */
 
-
+/*
 		function readCookie(name) {
 
 		  var nameEQ = name + "="; 
@@ -119,7 +119,42 @@
 
 		  return null;
 
+		}*/
+
+
+
+
+		function leerCookie(nombre) {
+
+		  var nombreEQ = nombre + "="; 
+		  var coma = document.cookie.split(';');
+
+		  for(var i=0;i < coma.length;i++) {
+
+		    var cookie = coma[i];
+		    while (cookie.charAt(0)==' ') cookie = cookie.substring(1,cookie.length);
+		    if (cookie.indexOf(nombreEQ) == 0) {
+		      return decodeURIComponent( cookie.substring(nombreEQ.length,cookie.length) );
+		    }
+
+		  }
+
+		  return null;
+
 		}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</script>
 </head>
 <body>
