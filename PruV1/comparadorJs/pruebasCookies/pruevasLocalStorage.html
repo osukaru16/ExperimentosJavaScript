@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+	//https://www.w3schools.com/html/html5_webstorage.asp
+
+	if (typeof(Storage) !== "undefined") {
+		var object = {
+			p:'hola',
+			l:'mundo'
+		};
+		localStorage.setItem("object", object);
+		verLocalStorage("object");
+    	// Code for localStorage/sessionStorage.
+	} else {
+    	// Sorry! No Web Storage support..
+	}
+
+	function verLocalStorage(name) {
+
+		  console.log(localStorage.getItem(name));
+
+	}
+	/*
+		var lista = new Array(1,2,3,4,5,6,7,987,1213,0.5214,152165,1215,1051,6145,454,150,150,268);
+		document.cookie = "Miau="+lista;
+		cookies = document.cookie.split(';');
+		alert(readCookie("Miau"));
+
+*/
+		
+
+/*
+		var miau = 'Neko';
+		$.cookies('Mike', miau);
+		alert("Hecho");
+*/
+/*
+
+		function readCookie(name) {
+
+		  var nameEQ = name + "="; 
+		  var ca = document.cookie.split(';');
+
+		  for(var i=0;i < ca.length;i++) {
+
+		    var c = ca[i];
+		    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		    if (c.indexOf(nameEQ) == 0) {
+		      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+		    }
+
+		  }
+
+		  return null;
+
+		}
+*/
+
+/*
+		function readCookie(name) {
+
+		  return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+
+		}
+*/
+
+
+	</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

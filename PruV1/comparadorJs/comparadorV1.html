@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+/*
+	if (typeof(Storage) !== "undefined") {
+		
+		function car(temp){
+     		this.brand=temp[0];
+     		this.color=temp[1];
+     		this.year=temp[2];
+ 		}
+
+ var temp = ['Skoda', 'Red', '2012'];
+ car = {brand:'paco',color:'red'};
+
+ localStorage.setItem('car',JSON.stringify(car)); 
+ car = localStorage.getItem('car');
+ car = JSON.parse(car);
+ alert("aa");
+ */
+
+ /*
+ var object = {
+			'p':'hola',
+			'l':'mundo'
+		};
+		localStorage.setItem("object", JSON.stringify(object));
+		verLocalStorage("object");
+    	// Code for localStorage/sessionStorage.
+	} else {
+    	// Sorry! No Web Storage support..
+	}
+
+	function verLocalStorage(name) {
+		var obj = localStorage.getItem(name);
+		obj = JSON.parse(obj);
+
+		  alert(obj);
+
+		}
+*/
+
+
+
+	var Obj1 = {id:"A1", nombre:"Kuro"};
+	var Obj2 = {id:"A2", nombre:"Neko"};
+
+
+
+
+
+		var lista = new Array();
+		//var lista = new Array(1, 2, 3, 4, 5, 6, 7, 987, 1213, 0.5214, 152165, 1215, 1051, 6145, 454, 150, 150, 268);
+		//var lista = new Array(codificarObjecto(Obj1),codificarObjecto(Obj2));
+		//var lista = new Array(Obj1, Obj2);
+
+		document.cookie = "listaObj="+JSON.stringify(lista);
+		//cookies = document.cookie.split(';');
+		var obja =  JSON.parse(leerCookie("listaObj"));
+
+		/*
+		for(var i = 0; i < obja.length; i++){
+			var obj = descodificarObjecto(obja[i]);
+		}*/
+/*
+		for(var i = 0; i < obja.length; i++){
+			alert(obja[i].id);
+		}
+*/
+
+		alert(lista.length);
+
+
+		/*
+
+		for each (ob in obja){
+			alert(ob.id);
+		}
+		*/
+
+
+
+		function codificarObjecto(obj){
+           var objetoCodificado = obj;
+           return JSON.stringify(objetoCodificado);
+		} 
+
+
+
+		function descodificarObjecto(obj){
+           var objetoDecodificado = obj;
+           return JSON.parse(objetoDecodificado);
+		} 
+
+
+
+
+		//alert("hey");
+		//alert(lista[0].id);
+		//alert(obja);
+		//alert(descodificarObjecto(obja[1]).id);
+		//alert(obja[1].id);
+
+
+		//alert(readCookie("listaObj")[7]);
+		//alert(readCookie("listaObj"));
+
+
+		
+
+/*
+		var miau = 'Neko';
+		$.cookies('Mike', miau);
+		alert("Hecho");
+*/
+
+/*
+		function readCookie(name) {
+
+		  var nameEQ = name + "="; 
+		  var ca = document.cookie.split(';');
+
+		  for(var i=0;i < ca.length;i++) {
+
+		    var c = ca[i];
+		    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		    if (c.indexOf(nameEQ) == 0) {
+		      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+		    }
+
+		  }
+
+		  return null;
+
+		}*/
+
+
+
+
+		function leerCookie(nombre) {
+
+		  var nombreEQ = nombre + "="; 
+		  var coma = document.cookie.split(';');
+
+		  for(var i=0;i < coma.length;i++) {
+
+		    var cookie = coma[i];
+		    while (cookie.charAt(0)==' ') cookie = cookie.substring(1,cookie.length);
+		    if (cookie.indexOf(nombreEQ) == 0) {
+		      return decodeURIComponent( cookie.substring(nombreEQ.length,cookie.length) );
+		    }
+
+		  }
+
+		  return null;
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>
