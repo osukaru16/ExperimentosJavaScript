@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var Recurso1 = {id:"R1", nom:"PKM",tipus:["actividad","educativa","ludica"], gratuit:true, tematica:["Videojuegos","Juegos"], territori:"Palma"};
+		var Recurso2 = {id:"R2", nom:"MINECON",tipus:["actividad","educativa","ludica","creativa"], gratuit:true, tematica:["Videojuegos","Juegos"], territori:"Palma"};
+
+
+		window.onload = function(){
+			var comparador = new Comparador();
+			//comparador.addRecurso(Recurso1);
+			//alert(Object.keys(Recurso1));
+			//alert(comparador.getKeys()[1]);
+			document.getElementById("guardarCookie").onclick = function(){
+				//alert(comparador.addRecurso(Recurso1));
+				if(!comparador.addRecurso(Recurso1)){
+					comparador.addRecurso(Recurso2);
+				}
+
+				
+			};
+
+			document.getElementById("recuperarCookie").onclick = function(){
+				//alert(comparador.leerCookie("compararRecursos"));
+				comparador.pintarTabla("tablaComparacion");
+				//comparador.getNombres();
+				
+			};
+
+			document.getElementById("keys").onclick = function(){
+				//alert(comparador.leerCookie("compararRecursos"));
+				//alert(comparador.getKeys());
+				//alert(Object.keys(Recurso1).length);
+				//comparador.getKeysArray();
+				//comparador.getNombres();
+				
+			};
+
+
+
+
+			//alert("H");
+		}
+
+
+
+	</script>
+</head>
+<body>
+<button id="guardarCookie">Guardar</button>
+<button id="recuperarCookie">Dibujar</button>
+<button id="keys">Keys</button>
+
+<div id="tablaComparacion"></div>
+
+
+
+
+
+</body>
+</html>
