@@ -125,7 +125,8 @@ Comparador.prototype.pintarTitulos = function(titulos){
 Comparador.prototype.pintaArray = function(key){
 
 	var textoHtml = "";
-	var arrayPintar = this.listaObjetos[0][key];
+	var arrayValores = new Array();
+	//var arrayPintar = this.listaObjetos[0][key];
 
 	//var listaKeysArrays = this.arrayKeysOrdenPintado;
 	//this.listaObjetos
@@ -133,15 +134,19 @@ Comparador.prototype.pintaArray = function(key){
 
 	textoHtml += "<tr><td colspan="+this.listaObjetos.length+">"+key+"</td></tr>";
 
-	for (var j = 0; j < arrayPintar.length; j++) {
-		textoHtml += "<tr>";
-		textoHtml += "<td>"+arrayPintar[j]+"</td>";
-		var comprobadorValores = this.comprobadorValor(key, arrayPintar[j]);
-		for (var g = 0; g < comprobadorValores.length; g++) {
-			textoHtml += "<td>"+this.pintarValorOX(comprobadorValores[g])+"</td>";
+	for (var i = 0; i < this.listaObjetos.length; i++) {
+		for (var j = 0; j < this.listaObjetos[i][key].length; j++) {
+			if ((arrayValores.indexOf(this.listaObjetos[i][key][j])) === -1 ){
+				arrayValores.push(this.listaObjetos[i][key][j]);
+				textoHtml += "<tr>";
+				textoHtml += "<td>"+this.listaObjetos[i][key][j]+"</td>";
+				var comprobadorValores = this.comprobadorValor(key, this.listaObjetos[i][key][j]);
+				for (var g = 0; g < comprobadorValores.length; g++) {
+					textoHtml += "<td>"+this.pintarValorOX(comprobadorValores[g])+"</td>";
+				}
+				textoHtml += "</tr>";
+			}
 		}
-			
-		textoHtml += "</tr>";
 	}
 
 
@@ -247,3 +252,43 @@ Comparador.prototype.pintarValorOX = function(valor){
 	return "X";
 }
 
+
+
+
+/*
+eliminarRecurso:
+este metodo elimina el objeto de la array(this.listaObjetos) y
+vuelve a llamara a this.escribirCookie para poner la nueva cookie
+
+*/
+
+Comparador.prototype.eliminarRecurso = function(objeto, key){
+	//alert("objeto.id");
+	
+	for (var i = 0; i < this.listaObjetos.length; i++) {
+		if(this.listaObjetos[i][key] === objeto[key]){
+			this.listaObjetos.splice(i, 1);
+			this.escribirCookie(this.nombreCookie,this.listaObjetos);
+			//this.pintarTabla(this.idHtml);
+		}
+	}/*
+	if (this.comprobarRecursoExiste(objeto, key)){
+		this.listaObjetos.splice(i, 1);
+		this.escribirCookie(this.nombreCookie,this.listaObjetos);
+	}*/
+}
+
+/*eliminarRecursoV2:
+Este metodo elimina el objeto del array usando el key y el valor que contiene en esa key.
+*/
+
+Comparador.prototype.eliminarRecursoV2 = function(key, keyValor){
+
+	for (var i = 0; i < this.listaObjetos.length; i++) {
+		if(this.listaObjetos[i][key] === keyValor){
+			this.listaObjetos.splice(i, 1);
+			this.escribirCookie(this.nombreCookie,this.listaObjetos);
+			//this.pintarTabla(this.idHtml);
+		}
+	}
+}
