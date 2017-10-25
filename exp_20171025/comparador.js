@@ -114,7 +114,8 @@ Comparador.prototype.pintarTabla = function(idHtml){
 Comparador.prototype.pintaArray = function(key){
 
 	var textoHtml = "";
-	var arrayPintar = this.listaObjetos[0][key];
+	var arrayValores = new Array();
+	//var arrayPintar = this.listaObjetos[0][key];
 
 	//var listaKeysArrays = this.arrayKeysOrdenPintado;
 	//this.listaObjetos
@@ -122,15 +123,19 @@ Comparador.prototype.pintaArray = function(key){
 
 	textoHtml += "<tr><td colspan="+this.listaObjetos.length+">"+key+"</td></tr>";
 
-	for (var j = 0; j < arrayPintar.length; j++) {
-		textoHtml += "<tr>";
-		textoHtml += "<td>"+arrayPintar[j]+"</td>";
-		var comprobadorValores = this.comprobadorValor(key, arrayPintar[j]);
-		for (var g = 0; g < comprobadorValores.length; g++) {
-			textoHtml += "<td>"+this.pintarValorOX(comprobadorValores[g])+"</td>";
+	for (var i = 0; i < this.listaObjetos.length; i++) {
+		for (var j = 0; j < this.listaObjetos[i][key].length; j++) {
+			if ((arrayValores.indexOf(this.listaObjetos[i][key][j])) === -1 ){
+				arrayValores.push(this.listaObjetos[i][key][j]);
+				textoHtml += "<tr>";
+				textoHtml += "<td>"+this.listaObjetos[i][key][j]+"</td>";
+				var comprobadorValores = this.comprobadorValor(key, this.listaObjetos[i][key][j]);
+				for (var g = 0; g < comprobadorValores.length; g++) {
+					textoHtml += "<td>"+this.pintarValorOX(comprobadorValores[g])+"</td>";
+				}
+				textoHtml += "</tr>";
+			}
 		}
-			
-		textoHtml += "</tr>";
 	}
 
 
