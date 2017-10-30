@@ -1,0 +1,179 @@
+
+
+
+
+
+
+
+
+
+
+#tablaComparacion table{
+	/*width: 80%;*/
+	margin: auto;
+	border-bottom-style: solid;
+    border-width: 1px;
+    float: left;
+	
+
+
+}
+
+#tablaComparacion table tr{
+
+	/*float: left;*/
+	/*border-style: solid;
+    border-width: 1px;
+    border-color: #626262;*/
+
+
+}
+
+#tablaComparacion table tr th{
+
+	background-color: #14789E;
+    color: #B0CFDB;
+    height: 70px;
+    /*width: 20%;*/
+    width: 150px;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    border-color: #075572;
+    
+
+
+}
+
+
+
+
+#tablaComparacion table tr th button{
+	background-color: #14789E;
+	/*margin-top: -25px;*/
+	/*margin-top: -9px;*/
+	/*float: right;*/
+	width: 100%;
+    text-align: right;
+	color: #C9E0E8;
+	border: none;
+	text-decoration: none;
+
+    font-size: 10px;
+
+	/*
+	margin-top: -1.3%;
+    margin-left: 4.4%;
+    position: absolute;*/
+
+}
+
+
+
+
+
+#tablaComparacion table tr th p {
+    
+    text-align: center;
+    width: 100%;
+	height: 50%;
+    /*background-color: crimson;*/
+}
+
+
+
+
+
+#tablaComparacion .titulosPropiedades{
+
+
+	text-align: left;
+	
+	padding-left: 1%;
+	border-style: none;
+    border-left-style: solid;
+    border-color: #626262;
+
+
+
+
+	/*border-style: none;
+
+	border-style: solid;
+    border-width: 1px;
+    border-right: 0;
+    border-top: 0;
+    border-color: #626262;
+    width: 200px;*/
+
+}
+
+#tablaComparacion .otrosTitulos{
+	/*#EFEFEF*/
+	background-color: #EFEFEF;
+
+
+
+}
+
+
+#tablaComparacion .noPintar{
+
+
+	border-style: none;
+	width: 200px;
+
+
+}
+
+
+
+
+
+#tablaComparacion table tr td{
+
+	border-style: solid;
+    border-width: 1px;
+    border-color: #626262;
+    height: 45px;
+    text-align: center;
+
+
+}
+
+
+
+
+
+
+
+#tablaComparacion table tr .tituloArray{
+	background-color: #EFEFEF;
+	color: #696969;
+	height: 30px;
+    text-align: left;
+    padding-left: 1%;
+    font-weight: 700;
+    border-color: #989898;
+
+
+	/*color: #3E3E3E;*/
+
+}
+
+
+
+
+#contenedorBotonAgregar {
+
+	float: left;
+	width: 200px;
+
+
+}
+
+#contenedorBotonAgregar button{
+	width: 100%;
+
+
+}
