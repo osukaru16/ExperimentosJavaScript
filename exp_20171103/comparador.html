@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--<script src="../js/comparador.js"></script>-->
+	<script type="text/javascript">
+
+		var pruebaObj ={id:"XD2", nom:"Programa Edicatiu  \"Amb bona lletra\" "};
+
+
+		var Recurso1 = {id:"R1", nom:"PKM",tipus:["actividad","educativa","ludica"], gratuit:true, tematica:["Videojuegos","Juegos"], territori:"Palma"};
+		var Recurso2 = {id:"R2", nom:"MINECON",tipus:["actividad","educativa","ludica","creativa"], gratuit:false, tematica:["Videojuegos","Juegos"], territori:"Palma"};
+		var Recurso3 = {id:"R3", nom:"Hinamatsuri",tipus:["actividad","cultural","tradicional"], gratuit:true, tematica:["Japonesa","Ceremonial"], territori:"Palma"};
+		var Recurso4 = {id:"R4", nom:pruebaObj["nom"],tipus:["actividad","pirotecnica","tradicional"], gratuit:true, tematica:["Japonesa"], territori:"Palma"};
+		var Recurso5 = {id:"R5", nom:{nombre:"Comiket"},tipus:["actividad","manga"], gratuit:true, tematica:["Japonesa","Manga","Anime","Comic"], territori:"Palma"};
+		var Recurso6 = {id:"R6", nom:"Neko Neko Neko Neko Neko Neko Neko",tipus:["Nyan"], gratuit:true, tematica:[], };
+
+		//{nom:"Comiket"}
+
+		var comparador = new Comparador();
+		window.onload = function(){
+			
+			//var comparador = new Comparador();
+			//comparador.addRecurso(Recurso1);
+			//alert(Object.keys(Recurso1));
+			//alert(comparador.getKeys()[1]);
+
+			document.getElementById("guardarCookie").onclick = function(){
+				//alert(comparador.addRecurso(Recurso1));
+					comparador.addRecurso(Recurso1);
+					comparador.addRecurso(Recurso2);
+					comparador.addRecurso(Recurso3);
+					comparador.addRecurso(Recurso4);
+					//comparador.addRecurso(Recurso5);
+					comparador.addRecurso(Recurso6);
+					dibuja();
+
+				
+			};
+
+			document.getElementById("recuperarCookie").onclick = function(){
+				//alert(comparador.leerCookie("compararRecursos"));
+				//  comparador.pintarTabla("tablaComparacion");
+				//comparador.getNombres();
+				dibuja();
+				
+			};
+
+			document.getElementById("keys").onclick = function(){
+
+				/*
+				var singleton = new (function() {
+					this.publicMethod = function() {
+						console.log('hello world');
+					}
+					this.publicProperty = 'test';
+				})();
+				*/
+
+
+
+				//alert(comparador.leerCookie("compararRecursos"));
+				//alert(comparador.getKeys());
+				//alert(comparador.getKeys(0)[2]);
+				//alert(Object.keys(Recurso1).length);
+				//alert(comparador.getKeysArray(0)[0]);
+				//var prueba = comparador.getValor(0)[2];
+				//alert(prueba[0]);
+				//alert(comparador.getArray()[0].id);
+				//var prueba = comparador.getKeysArray(0)[0];
+				//alert(comparador.getArray()[0]);
+				//alert(comparador.getArray()[0][comparador.getKeysArray(0)[0]][0]);
+				//alert(comparador.getArray()[0][comparador.getKeysArray(0)[0]][1]);
+				/*for (var prueba in comparador.getArray()[0]){
+					alert(prueba);
+				}*/
+				//comparador.getNombres();
+
+				//alert(comparador.getArray()[0][comparador.getKeysArray(0)[0]][0]);
+				//alert(comparador.getArray()[0]["tipus"]);
+
+				//alert(comparador.valoresArray("tipus"));
+				//comparador.comprobadorValoresArray("tipus");
+
+				//alert(comparador.comprobadorValor("tipus", "creativa"));
+
+				//alert(comparador.getKeysArray(0)[0]);
+
+				/*for (var i = 0;  i < pru(i); i++) {
+					alert(i);
+				}*/
+
+				//alert(comparador.arrayPintar());
+				//comparador.analizadorRecursos();
+				//alert(comparador.getArray()[0]["nom"]);
+
+				//var prueba = {id:"P1"};
+
+				//var obj = { a: 1 };
+				//var prueba = Object.assign({nom:"kuro"}, prueba);
+
+				//alert("Hey "+prueba.nom+" "+prueba.id );
+				/*
+				var b = new Array("c","d","e");
+				var a = new Array("a","b");
+				var ab = a.concat(b);
+
+				alert(ab);*/
+				//alert(comparador.ordenacionPintado());
+
+				//alert(comparador.pintaArray("tipus"));
+
+			};
+
+
+
+/*
+
+			document.getElementById("pkm").onclick = function(){
+				//comparador.eliminarRecurso(Recurso1, "id");
+				comparador.eliminarRecursoV2("id", "R1");
+				comparador.eliminarRecursoV2("id", "R4");
+				//comparador.eliminarRecursoV2("id", "R5");
+				comparador.eliminarRecursoV2("id", "R6");
+				dibuja();
+			};
+
+			document.getElementById("minecon").onclick = function(){
+				comparador.eliminarRecurso(Recurso2, "id");
+				dibuja();
+			};
+
+			document.getElementById("hinamatsuri").onclick = function(){
+				comparador.eliminarRecurso(Recurso3, "id");
+				dibuja();
+			};
+*/
+
+			/*
+			function pru(num){
+					if (num <= 5) {
+						return num + 2;
+					}
+					return num;
+				}*/
+
+
+			//alert("H");
+
+
+
+
+
+		}
+
+
+
+		function dibuja(){
+			comparador.pintaTabla("tablaComparacion");
+		}
+
+
+
+		function eliminaRecurso(elementoId){
+
+			//var elementoId = document.getElementsByTagName("button");
+			//var oID = $(this).attr("id");
+
+			//alert(elementoId);
+			comparador.eliminaRecurso(elementoId);
+			dibuja();
+		}
+
+		/*
+		function prueba(){
+			comparador.pintaTabla("tablaComparacion");
+		}
+*/
+
+/*
+		document.getElementById("addButton").onclick = function(){
+				alert("hey");
+					if (comparador.addRecurso(Recurso1)){
+						
+					}
+					else if(comparador.addRecurso(Recurso2)){
+
+					}
+					else if(comparador.addRecurso(Recurso3)){
+
+					}
+					else if(comparador.addRecurso(Recurso4)){
+
+					}
+					//comparador.addRecurso(Recurso5);
+					else if(comparador.addRecurso(Recurso6)){
+						
+					}
+					dibuja();
+
+				
+			};*/
+
+		function addRecurso(){
+/*
+			var that = this;
+			onclick(
+
+				function(){
+					that.click();
+			}.bind(this));*/
+
+			//alert("hey");
+			if (comparador.addRecurso(Recurso1)){
+						
+			}
+			else if(comparador.addRecurso(Recurso2)){
+
+			}
+			else if(comparador.addRecurso(Recurso3)){
+
+			}
+			else if(comparador.addRecurso(Recurso4)){
+
+			}
+					//comparador.addRecurso(Recurso5);
+			else if(comparador.addRecurso(Recurso6)){
+						
+			}
+			dibuja();
+
+		}
+
+
+
+
+
+	</script>
+</head>
+<body>
+<button id="guardarCookie">Guardar</button>
+<button id="recuperarCookie">Dibujar</button>
+<button id="keys">Keys</button>
+
+<!--
+<button id="pkm">PKM</button>
+<button id="minecon">MINECON</button>
+<button id="hinamatsuri">Hinamatsuri</button>
+
+<button id="kukuku" onclick="prueba();">Kururu</button>-->
+
+<div class="container">
+	<div id="tablaComparacion"></div>
+
+
+	<!--<div id="contenedorBotonAgregar"><button>+</button></div>-->
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
